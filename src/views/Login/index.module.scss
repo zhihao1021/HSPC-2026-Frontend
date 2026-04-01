@@ -1,0 +1,170 @@
+.loginPage {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box {
+        color: #000;
+        background-color: #FFF;
+        box-sizing: border-box;
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 22rem;
+        max-width: 95vw;
+        height: 30rem;
+        position: relative;
+        overflow: hidden;
+
+        h1 {
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .inputBox {
+            width: 100%;
+            font-size: 1.35rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #888;
+            transition: color 0.3s;
+            margin: 1rem 0;
+
+            &[data-error=true]:has(input:not(:focus)) {
+                color: #FF8888;
+
+                input {
+                    border-color: #FF8888;
+                }
+            }
+
+            &:has(input:focus) {
+                color: #000;
+            }
+
+            span {
+                font-size: 1.35em;
+            }
+
+            input {
+                color: inherit;
+                flex: 1;
+                font-size: inherit;
+                border: none;
+                border-bottom: 1px solid #CCC;
+                outline: none;
+                height: 1.5em;
+                line-height: 1.5em;
+                transition: color 0.3s, border-color 0.3s;
+
+                &:focus {
+                    border-color: #000;
+                }
+
+                &[type=password] {
+                    letter-spacing: 0.25em;
+                }
+
+                &::placeholder {
+                    color: inherit;
+                }
+            }
+        }
+
+        .innerBox {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: inherit;
+            transition: left 0.3s;
+
+            &.login {
+                left: 0;
+            }
+
+            &.login[data-show=false] {
+                left: -100%;
+            }
+
+            &.register {
+                left: 100%;
+            }
+
+            &.register[data-show=true] {
+                left: 0;
+            }
+
+        }
+
+        .fixedBox {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+            padding: inherit;
+
+            .error {
+                color: #000;
+                background-color: #FFCCCC;
+                margin: 1em 0;
+                padding: 0.5em;
+                border-radius: 0.5em;
+
+                &[data-show=false] {
+                    display: none;
+                }
+            }
+
+            .turnstile {
+                margin: 0.75rem 0;
+            }
+
+            .submit {
+                width: 100%;
+                padding: 0.5rem;
+                font-size: 1em;
+                background-color: #66CC66;
+                border: none;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                transition: transform 0.3s, background-color 0.3s;
+
+                &:hover {
+                    transform: translateY(-0.15rem);
+                }
+
+                &:disabled {
+                    background-color: #AAA;
+                    cursor: initial;
+                    transform: none;
+                }
+            }
+
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9em;
+                color: #666;
+                margin: 0.5rem 0;
+
+                button {
+                    color: inherit;
+                    background-color: transparent;
+                    font-size: inherit;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+    }
+}

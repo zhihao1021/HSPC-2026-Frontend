@@ -1,0 +1,58 @@
+.verify {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    text-wrap: wrap;
+    font-size: min(1rem, 3vw);
+    box-sizing: border-box;
+    padding: 2.5vw;
+
+    h2 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        height: 6rem;
+        margin: 2rem 0;
+
+        .strip {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: #FFF;
+            border-radius: 100vmax;
+            animation: loadingAni 1.2s linear infinite;
+
+            @keyframes loadingAni {
+                0% {
+                    height: 1.5rem;
+                }
+
+                25% {
+                    height: 4.5rem;
+                }
+
+                50% {
+                    height: 1.5rem;
+                }
+
+                100% {
+                    height: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .error {
+        font-size: 1.5em;
+    }
+}
