@@ -44,5 +44,9 @@ export default function About(): ReactNode {
                 onClick={() => scroll("right")}
             >chevron_right</button>
         </div>
+        <h2>加入 Discord</h2>
+        <a className={style.discordLink} href={import.meta.env.VITE_DISCORD_LINK} target="_blank" rel="noopener noreferrer">
+            <img alt="Discord icon" src="/Discord-Logo-White.svg" />
+        </a>
     </div>;
 };

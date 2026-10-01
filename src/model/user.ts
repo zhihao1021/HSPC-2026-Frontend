@@ -13,7 +13,24 @@ export type UserDataRead = Readonly<{
     email_verified: boolean;
     student_verified: boolean;
     verify_state: SIDVerifyState;
+    is_admin: boolean;
 }>;
+
+export const UserDataReadKeys: (keyof UserDataRead)[] = [
+    "uid",
+    "email",
+    "city",
+    "lunch",
+    "real_name",
+    "school",
+    "is_nanbao",
+    "is_graduate",
+    "team_id",
+    "email_verified",
+    "student_verified",
+    "verify_state",
+    "is_admin"
+];
 
 export type UserDataUpdate = Readonly<{
     origin_password?: string;

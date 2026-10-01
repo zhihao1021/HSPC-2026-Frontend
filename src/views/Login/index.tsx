@@ -90,7 +90,7 @@ export default function Login(): ReactNode {
     }, [userData]);
 
     return <div className={styles.loginPage}>
-        <div className={styles.box}>
+        <div className={styles.box} data-mode={mode}>
             <div className={`${styles.innerBox} ${styles.login}`} data-show={mode === "login"}>
                 <h1>登入</h1>
                 <div className={styles.inputBox} data-error={emailError}>
@@ -105,6 +105,7 @@ export default function Login(): ReactNode {
                             if (e.key === "Enter")
                                 submit();
                         }}
+                        disabled={mode !== "login"}
                     />
                 </div>
                 <div className={styles.inputBox}>
@@ -119,8 +120,13 @@ export default function Login(): ReactNode {
                             if (e.key === "Enter")
                                 submit();
                         }}
+                        disabled={mode !== "login"}
                     />
                 </div>
+                {/* <div className={styles.footer}>
+                    忘記密碼嗎？
+                    <button>重設密碼</button>
+                </div> */}
             </div>
             <div className={`${styles.innerBox} ${styles.register}`} data-show={mode === "register"}>
                 <h1>註冊</h1>
@@ -136,6 +142,7 @@ export default function Login(): ReactNode {
                             if (e.key === "Enter")
                                 submit();
                         }}
+                        disabled={mode !== "register"}
                     />
                 </div>
                 <div className={styles.inputBox} data-error={confirmPassword && confirmPassword !== password}>
@@ -150,6 +157,7 @@ export default function Login(): ReactNode {
                             if (e.key === "Enter")
                                 submit();
                         }}
+                        disabled={mode !== "register"}
                     />
                 </div>
                 <div className={styles.inputBox} data-error={confirmPassword && confirmPassword !== password}>
@@ -164,6 +172,7 @@ export default function Login(): ReactNode {
                             if (e.key === "Enter")
                                 submit();
                         }}
+                        disabled={mode !== "register"}
                     />
                 </div>
             </div>

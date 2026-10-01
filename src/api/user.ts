@@ -30,7 +30,7 @@ export async function getSidImage(): Promise<SidImageRead | null> {
     return response.data;
 }
 
-export async function uploadSidImage(file: File, type: "back" | "front"): Promise<void> {
+export async function uploadSidImage(type: "front" | "back", file: File): Promise<void> {
     const formData = new FormData();
     formData.append("image", file);
 
@@ -39,4 +39,22 @@ export async function uploadSidImage(file: File, type: "back" | "front"): Promis
             "Content-Type": "multipart/form-data",
         },
     });
+}
+
+export async function getAllUsers(): Promise<readonly UserDataRead[]> {
+    const response = await req.get("/user/all");
+
+    return response.data;
+}
+
+export async function getUserDataByUid(uid: string): Promise<UserDataRead> {
+    const response = await req.get(`/user/by-id/${uid}`);
+
+    return response.data;
+}
+
+export async function getSidImageByUid(uid: string): Promise<SidImageRead | null> {
+    const response = await req.get(`/user/by-id/${uid}/sid`);
+
+    return response.data;
 }

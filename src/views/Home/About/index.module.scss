@@ -147,4 +147,16 @@
             }
         }
     }
+
+    .discordLink {
+        display: block;
+        width: min(28rem, 75vw);
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: #5865F2;
+        margin: 0.5rem 0;
+        aspect-ratio: 2647/400;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
 }

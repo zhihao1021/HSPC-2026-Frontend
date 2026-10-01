@@ -79,23 +79,26 @@
             box-sizing: border-box;
             padding: inherit;
             transition: left 0.3s;
+        }
 
-            &.login {
+        &[data-mode="login"] {
+            .login {
                 left: 0;
             }
 
-            &.login[data-show=false] {
+            .register {
+                left: 100%;
+            }
+        }
+
+        &[data-mode="register"] {
+            .login {
                 left: -100%;
             }
 
-            &.register {
-                left: 100%;
-            }
-
-            &.register[data-show=true] {
+            .register {
                 left: 0;
             }
-
         }
 
         .fixedBox {
@@ -142,26 +145,26 @@
                     transform: none;
                 }
             }
+        }
 
-            .footer {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.9em;
-                color: #666;
-                margin: 0.5rem 0;
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #666;
+            margin: 0.5rem 0;
 
-                button {
-                    color: inherit;
-                    background-color: transparent;
-                    font-size: inherit;
-                    text-decoration: underline;
-                    font-weight: bold;
-                    transition: color 0.3s;
+            button {
+                color: inherit;
+                background-color: transparent;
+                font-size: inherit;
+                text-decoration: underline;
+                font-weight: bold;
+                transition: color 0.3s;
 
-                    &:hover {
-                        color: #000;
-                    }
+                &:hover {
+                    color: #000;
                 }
             }
         }

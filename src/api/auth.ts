@@ -46,3 +46,15 @@ export async function verifyEmail(code: string): Promise<{
 
     return response.data;
 }
+
+export async function refreshToken(): Promise<{
+    token_type: "Bearer";
+    access_token: string;
+}> {
+    const response = await req.post("/auth/refresh");
+    return response.data;
+}
+
+export async function resendVerificationEmail(): Promise<void> {
+    await req.post("/auth/resend-verification-email");
+}
